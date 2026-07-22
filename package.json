@@ -2,7 +2,7 @@
   "name": "com.pedro.neovim",
   "version": "1.0.0",
   "displayName": "Neovim Unity Integration",
-  "description": "Integration package for Neovim in Unity",
+  "description": "Self-contained, offline-ready Neovim configuration and integration package for C# and Unity development.",
   "unity": "2020.1",
   "author": {
     "name": "Pedro Sudario"
