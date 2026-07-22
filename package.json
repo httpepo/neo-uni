@@ -1,0 +1,10 @@
+{
+  "name": "com.pedro.neovim",
+  "version": "1.0.0",
+  "displayName": "Neovim Unity Integration",
+  "description": "Integration package for Neovim in Unity",
+  "unity": "2020.1",
+  "author": {
+    "name": "Pedro Sudario"
+  }
+}
