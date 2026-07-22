@@ -1,0 +1,268 @@
+{
+    "Unity MonoBehaviour": {
+        "prefix": "MonoBehaviour",
+        "description": "Unity MonoBehaviour class template.",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "public class ${TM_FILENAME_BASE} : MonoBehaviour",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "SerializeField Variable": {
+        "prefix": "sf",
+        "description": "[SerializeField] private variable",
+        "body": [
+            "[SerializeField] private ${1:float} ${2:variableName};$0"
+        ]
+    },
+    "SerializeField Variable with Header": {
+        "prefix": "sfh",
+        "description": "[SerializeField] private variable with Header",
+        "body": [
+            "[Header(\"${1:Header Name}\")]",
+            "[SerializeField] private ${2:float} ${3:variableName};$0"
+        ]
+    },
+    "GetComponent Call": {
+        "prefix": "getcomp",
+        "description": "GetComponent<Type>() call",
+        "body": [
+            "${1:var} = GetComponent<${2:Type}>();$0"
+        ]
+    },
+    "TryGetComponent Call": {
+        "prefix": "trygetcomp",
+        "description": "if (TryGetComponent<Type>(out var component))",
+        "body": [
+            "if (TryGetComponent<${1:Type}>(out var ${2:comp}))",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "GetComponent in Awake": {
+        "prefix": "getcompawake",
+        "description": "Get component reference in Awake()",
+        "body": [
+            "private ${1:Type} _${2:varName};",
+            "",
+            "private void Awake()",
+            "{",
+            "\t_${2:varName} = GetComponent<${1:Type}>();",
+            "}$0"
+        ]
+    },
+    "Unity Coroutine": {
+        "prefix": "coroutine",
+        "description": "IEnumerator Coroutine method",
+        "body": [
+            "private System.Collections.IEnumerator ${1:CoroutineName}()",
+            "{",
+            "\tyield return new WaitForSeconds(${2:1f});",
+            "\t$0",
+            "}"
+        ]
+    },
+    "Start Coroutine": {
+        "prefix": "startcoroutine",
+        "description": "StartCoroutine(MethodName())",
+        "body": [
+            "StartCoroutine(${1:CoroutineName}());$0"
+        ]
+    },
+    "Instantiate Prefab": {
+        "prefix": "instantiate",
+        "description": "Instantiate prefab with position and rotation",
+        "body": [
+            "Instantiate(${1:prefab}, ${2:transform.position}, ${3:Quaternion.identity});$0"
+        ]
+    },
+    "Unity Singleton": {
+        "prefix": "singleton",
+        "description": "Create a classic MonoBehaviour Singleton pattern",
+        "body": [
+            "public static ${TM_FILENAME_BASE} Instance { get; private set; }",
+            "",
+            "private void Awake()",
+            "{",
+            "\tif (Instance != null && Instance != this)",
+            "\t{",
+            "\t\tDestroy(gameObject);",
+            "\t\treturn;",
+            "\t}",
+            "\tInstance = this;",
+            "}$0"
+        ]
+    },
+    "CompareTag Call": {
+        "prefix": "comparetag",
+        "description": "if (CompareTag(\"Tag\"))",
+        "body": [
+            "if (CompareTag(\"${1:Player}\"))",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "OnTriggerEnter Collision": {
+        "prefix": "OnTriggerEnter",
+        "description": "OnTriggerEnter lifecycle method",
+        "body": [
+            "private void OnTriggerEnter(Collider other)",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "OnTriggerExit Collision": {
+        "prefix": "OnTriggerExit",
+        "description": "OnTriggerExit lifecycle method",
+        "body": [
+            "private void OnTriggerExit(Collider other)",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "OnTriggerStay Collision": {
+        "prefix": "OnTriggerStay",
+        "description": "OnTriggerStay lifecycle method",
+        "body": [
+            "private void OnTriggerStay(Collider other)",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "OnCollisionEnter Collision": {
+        "prefix": "OnCollisionEnter",
+        "description": "OnCollisionEnter lifecycle method",
+        "body": [
+            "private void OnCollisionEnter(Collision other)",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "OnCollisionExit Collision": {
+        "prefix": "OnCollisionExit",
+        "description": "OnCollisionExit lifecycle method",
+        "body": [
+            "private void OnCollisionExit(Collision other)",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "OnCollisionStay Collision": {
+        "prefix": "OnCollisionStay",
+        "description": "OnCollisionStay lifecycle method",
+        "body": [
+            "private void OnCollisionStay(Collision other)",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "MonoBehaviour Awake": {
+        "prefix": "Awake",
+        "description": "Awake lifecycle method",
+        "body": [
+            "private void Awake()",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "MonoBehaviour Start": {
+        "prefix": "Start",
+        "description": "Start lifecycle method",
+        "body": [
+            "private void Start()",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "MonoBehaviour Update": {
+        "prefix": "Update",
+        "description": "Update lifecycle method",
+        "body": [
+            "private void Update()",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "MonoBehaviour FixedUpdate": {
+        "prefix": "FixedUpdate",
+        "description": "FixedUpdate lifecycle method",
+        "body": [
+            "private void FixedUpdate()",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "MonoBehaviour LateUpdate": {
+        "prefix": "LateUpdate",
+        "description": "LateUpdate lifecycle method",
+        "body": [
+            "private void LateUpdate()",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "MonoBehaviour OnEnable": {
+        "prefix": "OnEnable",
+        "description": "OnEnable lifecycle method",
+        "body": [
+            "private void OnEnable()",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "MonoBehaviour OnDisable": {
+        "prefix": "OnDisable",
+        "description": "OnDisable lifecycle method",
+        "body": [
+            "private void OnDisable()",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    },
+    "Debug Log": {
+        "prefix": "log",
+        "description": "Debug.Log(message)",
+        "body": "Debug.Log($0);"
+    },
+    "Debug LogWarning": {
+        "prefix": "logw",
+        "description": "Debug.LogWarning(message)",
+        "body": "Debug.LogWarning($0);"
+    },
+    "Debug LogError": {
+        "prefix": "loge",
+        "description": "Debug.LogError(message)",
+        "body": "Debug.LogError($0);"
+    },
+    "Create ScriptableObject": {
+        "prefix": "ScriptableObject",
+        "description": "Unity ScriptableObject class template.",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "[CreateAssetMenu(fileName = \"New${TM_FILENAME_BASE}\", menuName = \"ScriptableObjects/${TM_FILENAME_BASE}\", order = 0)]",
+            "public class ${TM_FILENAME_BASE} : ScriptableObject",
+            "{",
+            "\t$0",
+            "}"
+        ]
+    }
+}
